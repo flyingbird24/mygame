@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg37v515fu7g8"]
+
+[ext_resource type="Texture2D" uid="uid://cl8qs3ij61l0m" path="res://83f4ec41bc09b62f68dbacf70c28968c.jpg" id="1_jpg3f"]
+[ext_resource type="PackedScene" uid="uid://0ds6jt5p1bkk" path="res://player_fyx.tscn" id="2_500u5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_500u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_500u5"]
+size = Vector2(7799, 1239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvv2g"]
+size = Vector2(7986, 1024.25)
+
+[node name="Level-fyx" type="Node2D"]
+material = SubResource("ShaderMaterial_500u5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jpg3f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 1004)
+shape = SubResource("RectangleShape2D_500u5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8, -348.125)
+shape = SubResource("RectangleShape2D_tvv2g")
+
+[node name="player_fyx" parent="." instance=ExtResource("2_500u5")]
+position = Vector2(-5, 267)
